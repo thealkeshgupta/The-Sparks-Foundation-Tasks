@@ -1,0 +1,70 @@
+---
+title: ""
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Task : Prediction using Unsupervised ML
+
+## Importing the Iris dataset
+```{r}
+myData <- read.csv("Iris.csv")
+print(head(myData))
+```
+
+## Extracting features
+```{r}
+f <- c("SepalLengthCm","SepalWidthCm","PetalLengthCm","PetalWidthCm")
+myFeatures = myData[f]
+head(myFeatures)
+```
+## Analyzing the features
+```{r}
+summary(myFeatures)
+
+```
+
+## Importing ***ggplot(Grammar of Graphics)*** library for graph
+```{r}
+library(ggplot2)
+```
+
+## Plotting graph between PetalLengthCm and  PetalWidthCm
+```{r}
+ggplot(myData, aes(PetalLengthCm, PetalWidthCm)) + geom_point(aes(col=Species), size=4)
+```
+
+## Plotting graph between SepalLengthCm and  SepalWidthCm
+```{r}
+ggplot(myData, aes(SepalLengthCm, SepalWidthCm)) + geom_point(aes(col=Species), size=4)
+
+```
+
+## Finding optimal numbers of cluster
+```{r}
+twss <- vector(mode="character", length=10)
+for (i in 1:10){
+  clusters <- kmeans(myFeatures, center=i, nstart=20)
+  twss[i] <- clusters$tot.withinss
+}
+plot(1:10, twss, type="b", pch=6)
+```
+
+> We can here clearly observe that *twss value* has significant decline between ***k = 2*** and ***k = 3***. Later, this decline in twss is not much.
+> 
+>Hence, we get the **optimal numbers of cluster = 3**
+
+
+## Importing the Cluster Library for cluster plotting
+```{r}
+library(cluster)
+```
+
+## Plotting the clusters
+```{r}
+clusters <- kmeans(myFeatures, center=3, nstart=20)
+clusplot(myFeatures, clusters$cluster, color=T, shade=T, labels=0, lines=0)
+```
+
