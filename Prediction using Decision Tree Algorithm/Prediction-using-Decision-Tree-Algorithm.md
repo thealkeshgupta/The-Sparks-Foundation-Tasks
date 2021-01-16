@@ -102,7 +102,7 @@ cp <-  sum(predictions == iris_test$Species)
 sprintf("Correct predictions : %0.2f %%", (cp/40)*100)
 ```
 
-    ## [1] "Correct predictions : 100.00 %"
+    ## [1] "Correct predictions : 90.00 %"
 
 ``` r
 table(predictions, iris_test$Species)
@@ -110,6 +110,6 @@ table(predictions, iris_test$Species)
 
     ##                  
     ## predictions       Iris-setosa Iris-versicolor Iris-virginica
-    ##   Iris-setosa              11               0              0
-    ##   Iris-versicolor           0              13              0
-    ##   Iris-virginica            0               0             16
+    ##   Iris-setosa              13               0              0
+    ##   Iris-versicolor           0              11              2
+    ##   Iris-virginica            0               2             12
