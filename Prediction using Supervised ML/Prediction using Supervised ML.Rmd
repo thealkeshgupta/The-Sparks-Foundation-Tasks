@@ -1,0 +1,52 @@
+---
+title: ""
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Task : Prediction using Supervised ML
+
+## Read dataset student_scores.csv
+```{r}
+myData <- read.csv("student_scores.csv")
+print(myData)
+```
+
+## Analyzing the summary of myData
+```{r}
+summary(myData)
+```
+
+## Extracting variables
+```{r}
+hours <- myData$Hours
+scores <- myData$Scores
+```
+ 
+```{r}
+print(hours)
+print(scores)
+```
+
+## linear regression model
+```{r}
+myModel <- lm(scores~hours)
+print(myModel)
+```
+
+## Plot the model graph
+```{r}
+plot(hours,scores,col = "red",main = "Student Marks Predictor",
+abline(myModel),cex = 1.5,pch = 20,xlab = "No. of hours studied per day",ylab = "Marks obtained")
+```
+
+## Predicting a score for Input (hours = 9.25)
+```{r}
+score <- data.frame(hours = 9.25)
+hourOutput <-  predict(myModel,score)
+print(hourOutput)
+```
+
