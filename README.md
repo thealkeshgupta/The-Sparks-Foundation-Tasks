@@ -71,7 +71,7 @@ with basic as well as advanced charts
 charts and giving recommendations
 1. Dataset: Daily updated .csv file on [https://bit.ly/30d2gdi](https://bit.ly/30d2gdi)
 1. Click here to view the [project](https://github.com/thealkeshgupta/The-Sparks-Foundation-Tasks/tree/main/Timeline%20Analysis%20-%20Covid-19)
-1. View my Covid-19 Timeline Analysis Task on my [LinkedIn Profile]() as well.
+1. View my Covid-19 Timeline Analysis Task on my [LinkedIn Profile](https://www.linkedin.com/posts/alkesh-gupta-b97130178_gripjan21-dataabrscience-businessabranalytics-activity-6756196698671890432-nh0J) as well.
 
 
 
